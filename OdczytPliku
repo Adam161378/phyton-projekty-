@@ -1,0 +1,12 @@
+# Odczyt całego pliku
+with open("dane.txt", "r", encoding="utf-8") as f:
+    print(f.read())
+
+# Odczyt pierwszej linii
+with open("dane.txt", "r", encoding="utf-8") as f:
+    print(f.readline().strip())
+
+# Dopisanie do pliku
+a = input("Podaj znak lub tekst: ")
+with open("dane.txt", "a", encoding="utf-8") as f:
+    f.write(a + "\n")
