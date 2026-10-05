@@ -1,0 +1,37 @@
+def wczytaj_dane():
+    plik = open("dane.txt", encoding="utf 8")
+    dane = plik.readlines()
+    plik.close()
+
+    for i in range(len(dane)):
+       dane[i] = dane[i].strip()
+    return dane
+    
+def pokaz(dane):
+    for x in dane:
+        print(x)
+
+def sortuj(dane):
+        dane.sort()
+        plik = open("posortowane.txt", "w")
+        for x in dane: 
+             plik.write(x + "\n")
+            #  plik.close()
+
+dane = wczytaj_dane()
+
+while True:
+            print("\n 1. Wyswietl dane")
+            print("2. Posortuj dane")
+            print("3. Zakoncz program")
+
+            wybor = int(input("Wybierz:..."))
+
+            if wybor == 1:
+                pokaz(dane)
+            elif wybor == 2:
+                sortuj(dane)
+            elif wybor == 3:
+                 break
+            else:
+                 print("Nie poprawny wybór")
